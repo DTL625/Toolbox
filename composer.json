@@ -1,0 +1,26 @@
+{
+    "name": "gitlexin/codetool",
+    "description": "php code tool",
+    "type": "library",
+    "authors": [
+        {
+            "name": "lexin",
+            "email": "772821140@qq.com"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "phpoffice/phpexcel": "^1.8.1"
+    },
+    "autoload": {
+        "psr-4": { 
+            "Lexin\\": "src/"
+        },
+        "files": [
+            "src/functions.php"
+        ]
+    }
+}
+
