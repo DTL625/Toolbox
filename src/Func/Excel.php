@@ -5,8 +5,8 @@ namespace Lexin\Func;
 class Excel
 {
     /**
-     * 读取excel文件内的完整内容，加载为数据返回
-     * @param $filePath
+     * 讀取excel文件內的完整內容，加載為數據返回
+     * @param     $filePath
      * @param int $sheetNum
      * @return array
      * @throws \PHPExcel_Exception
@@ -20,27 +20,26 @@ class Excel
 
         $inputFileType = \PHPExcel_IOFactory::identify($filePath);
         $PHPReader     = \PHPExcel_IOFactory::createReader($inputFileType);
-        //只读去数据，忽略里面各种格式等(对于Excel读取，有很大优化)
+        //只讀去數據，忽略裡面各種格式等(對於Excel讀取，有很大優化)
         // $PHPReader->setReadDataOnly(true);
 
         $PHPExcel = $PHPReader->load($filePath);
-        /**读取excel文件中的第一个工作表*/
+        /**讀取excel文件中的第一個工作表*/
         $currentSheet = $PHPExcel->getSheet($sheetNum);
-        /**取得最大的列号*/
+        /**取得最大的列號*/
         $allColumn = $currentSheet->getHighestColumn();
         /**取得一共有多少行*/
         $allRow = $currentSheet->getHighestRow();
-        /**从第一行开始 全部原封不动读取返回*/
+        /**從第一行開始 全部原封不動讀取返回*/
         $result = [];
 
         for ($currentRow = 1; $currentRow <= $allRow; $currentRow++) {
-            /**从第A列开始输出*/
+            /**從第A列開始輸出*/
             for ($currentColumn = 'A'; $currentColumn <= $allColumn; $currentColumn++) {
                 $cell = $currentSheet->getCellByColumnAndRow(ord($currentColumn) - 65, $currentRow);
                 $val  = $cell->getValue();
 
-
-                //如果是时间格式，则解析
+                //如果是時間格式，則解析
                 if ($cell->getDataType() == \PHPExcel_Cell_DataType::TYPE_NUMERIC) {
                     $cellstyleformat = $currentSheet->getStyle($cell->getCoordinate())->getNumberFormat();
                     $formatcode      = $cellstyleformat->getFormatCode();
@@ -55,7 +54,7 @@ class Excel
                 }
                 $result[$currentRow][] = (string) $val;
             }
-            //如果整行都是空数据 删除该行
+            //如果整行都是空數據 刪除該行
             if (empty(array_filter($result[$currentRow]))) {
                 unset($result[$currentRow]);
             }

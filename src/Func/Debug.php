@@ -5,11 +5,11 @@ namespace Lexin\Func;
 class Debug
 {
     /**
-     * 打印传入的所有参数，并结束程序
+     * 打印傳入的所有參數，並結束程序
      */
     public static function buildStr($value)
     {
-        $type = gettype($value);
+        $type      = gettype($value);
         $print_str = '';
         switch ($type) {
             case 'integer':
@@ -19,7 +19,7 @@ class Debug
                 $print_str .= "({$type}) {$value}";
                 break;
             case 'string':
-                $value = $value ?: "''";
+                $value     = $value ? : "''";
                 $print_str .= "({$type}) {$value}";
                 break;
             case 'boolean':
@@ -34,7 +34,7 @@ class Debug
                 break;
 
             default:
-                $print_str .= '参数type异常';
+                $print_str .= '參數type異常';
                 break;
         }
 
@@ -73,7 +73,7 @@ class Debug
     }
 
     /**
-     * 实时输出文本内容
+     * 實時輸出文本內容
      * @param string $msg
      */
     public static function show_trace_info($msg = '')
@@ -91,13 +91,13 @@ class Debug
     }
 
     /**
-     * 将字节大小转换为可读性强的带单位的显示方式
+     * 將字節大小轉換為可讀性強的帶單位的顯示方式
      * @param $size
      * @return string
      */
     public static function memory_usage_convert($size)
     {
-        $unit = array('b', 'kb', 'mb', 'gb', 'tb', 'pb');
+        $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
         return @round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . '' . $unit[$i];
     }
 }

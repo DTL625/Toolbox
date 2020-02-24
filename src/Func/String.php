@@ -1,13 +1,13 @@
 <?php
 
-namespace Lexin\Func;
+namespace lexin\func;
 
-class String
+class string
 {
     /**
-     * 截取字符串并添加省略符
-     * @param $str
-     * @param int $len
+     * 截取字符串並添加省略符
+     * @param        $str
+     * @param int    $len
      * @param string $subfix
      * @return string
      */

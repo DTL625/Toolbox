@@ -5,7 +5,7 @@ namespace Lexin\Func;
 class Validate
 {
     /**
-     * 是否中国手机号
+     * 是否中國手機號
      * @param $value
      */
     public static function is_mobile($value)
@@ -24,17 +24,17 @@ class Validate
     }
 
     /**
-     * 是否纯字母
+     * 是否純字母
      * @param $value
      * @return bool
      */
     public static function is_alpha($value)
     {
-        return self::regex($value,'/^[A-Za-z]+$/');
+        return self::regex($value, '/^[A-Za-z]+$/');
     }
 
     /**
-     * 是否数字字母
+     * 是否數字字母
      * @param $value
      * @return bool
      */
@@ -44,7 +44,7 @@ class Validate
     }
 
     /**
-     * 是否纯汉字
+     * 是否純漢字
      * @param $value
      * @return bool
      */
@@ -54,7 +54,7 @@ class Validate
     }
 
     /**
-     * 是否字母汉字
+     * 是否字母漢字
      * @param $value
      * @return bool
      */
@@ -64,7 +64,7 @@ class Validate
     }
 
     /**
-     * 是否数字字母汉字
+     * 是否數字字母漢字
      * @param $value
      * @return bool
      */
@@ -73,9 +73,8 @@ class Validate
         return self::regex($value, '/^[\x{4e00}-\x{9fa5}a-zA-Z0-9]+$/u');
     }
 
-
     /**
-     * 是否汉字、字母、数字和下划线_及破折号-
+     * 是否漢字、字母、數字和下划線_及破折號-
      * @param $value
      * @return bool
      */
@@ -85,7 +84,7 @@ class Validate
     }
 
     /**
-     * 是否邮箱
+     * 是否郵箱
      * @param $value
      * @return bool
      */
@@ -115,39 +114,38 @@ class Validate
     }
 
     /**
-     * 使用正则验证数据
+     * 使用正則驗證數據
      * @access protected
      * @param mixed $value 字段值
-     * @param mixed $rule 验证规则 正则规则或者预定义正则名
+     * @param mixed $rule 驗證規則 正則規則或者預定義正則名
      * @return mixed
      */
     protected static function regex($value, $rule)
     {
         if (0 !== strpos($rule, '/') && !preg_match('/\/[imsU]{0,4}$/', $rule)) {
-            // 不是正则表达式则两端补上/
+            // 不是正則表達式則兩端補上/
             $rule = '/^' . $rule . '$/';
         }
-        return 1 === preg_match($rule, (string)$value);
+        return 1 === preg_match($rule, (string) $value);
     }
 
     /**
-     * 使用filter_var方式验证
+     * 使用filter_var方式驗證
      * @access protected
      * @param mixed $value 字段值
-     * @param mixed $rule 验证规则
+     * @param mixed $rule 驗證規則
      * @return bool
      */
     protected static function filter($value, $rule)
     {
         if (is_string($rule) && strpos($rule, ',')) {
             list($rule, $param) = explode(',', $rule);
-        } elseif (is_array($rule)) {
+        } else if (is_array($rule)) {
             $param = isset($rule[1]) ? $rule[1] : null;
         } else {
             $param = null;
         }
         return false !== filter_var($value, is_int($rule) ? $rule : filter_id($rule), $param);
     }
-
 
 }

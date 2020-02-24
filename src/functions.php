@@ -1,6 +1,6 @@
 <?php
 /**
- * 打印并结束程序
+ * 打印並結束程序
  */
 if (!function_exists('pe')) {
     function pe()
@@ -20,7 +20,7 @@ if (!function_exists('p')) {
 }
 
 /**
- * 实时输出字符串
+ * 實時輸出字符串
  */
 if (!function_exists('show_trace_info')) {
     function show_trace_info($msg)

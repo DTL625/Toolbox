@@ -5,8 +5,8 @@ namespace Lexin\Func;
 class Url
 {
     /**
-     * 追加url参数到url中,如果已存在，则覆盖
-     * @param $url
+     * 追加url參數到url中,如果已存在，則覆蓋
+     * @param       $url
      * @param array $appendQueryParams
      * @return string
      */
