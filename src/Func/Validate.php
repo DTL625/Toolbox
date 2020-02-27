@@ -1,6 +1,6 @@
 <?php
 
-namespace Lexin\Func;
+namespace DTL\FT;
 
 class Validate
 {

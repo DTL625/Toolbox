@@ -1,10 +1,17 @@
 <?php
 
-namespace Lexin\Func;
+namespace DTL\FT;
 
 class Arr
 {
-    //獲取陣列內容
+    /**
+     * 獲取陣列內容，並支援點式語法
+     *
+     * @param      $array
+     * @param      $key
+     * @param null $default
+     * @return mixed|null
+     */
     public static function get($array, $key, $default = null)
     {
         if (!is_array($array)) {
@@ -30,7 +37,14 @@ class Arr
         return $array;
     }
 
-    //將一維陣列按照指定的字段分組
+    /**
+     * 將一維陣列按照指定的字段分組
+     *
+     * @param array $array
+     * @param       $fieldName
+     * @param bool  $is_multi
+     * @return array|bool
+     */
     public static function group_by(Array $array, $fieldName, $is_multi = false)
     {
         if (is_array($array) && $fieldName) {

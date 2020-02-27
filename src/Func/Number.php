@@ -1,6 +1,6 @@
 <?php
 
-namespace Lexin\Func;
+namespace DTL\FT;
 
 class Number
 {
@@ -15,6 +15,7 @@ class Number
         $str = strval($num);
         list($int, $float) = explode('.', $str);
         $float = substr($float, 0, $size);
+
         return $float > 0 ? floatval($int . '.' . $float) : intval($int);
     }
 
@@ -28,9 +29,7 @@ class Number
     {
         $preg = $float ? '[0-9\.]*' : '\d*';
         $num  = preg_match_all("/{$preg}/", $str, $out);
-        if ($num) {
-            return join(array_values($out[0]));
-        }
-        return '';
+
+        return ($num) ? join(array_values($out[0])) : '';
     }
 }

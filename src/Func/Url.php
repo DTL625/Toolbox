@@ -1,6 +1,6 @@
 <?php
 
-namespace Lexin\Func;
+namespace DTL\FT;
 
 class Url
 {
@@ -10,7 +10,7 @@ class Url
      * @param array $appendQueryParams
      * @return string
      */
-    public static function appendQueryParams($url, $appendQueryParams = [])
+    public static function append_query_params($url, $append_query_params = [])
     {
         if (!Validate::is_url($url)) {
             return '';
@@ -21,7 +21,7 @@ class Url
         if (isset($urlParse['query'])) {
             parse_str($urlParse['query'], $query);
         }
-        $query = array_merge($query, $appendQueryParams);
+        $query = array_merge($query, $append_query_params);
 
         return join('', [
             isset($urlParse['scheme']) ? $urlParse['scheme'] . '://' : '',

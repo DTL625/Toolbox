@@ -5,8 +5,9 @@ namespace Lexin\Func;
 class Csv
 {
     /**
-     * 根據數組導出csv文件
-     * @param  array  一維索引數組，第一行可以為title行，該方法將輸出每一行每一列
+     * 根據陣列導出csv文件
+     *
+     * @param  array  一維索引陣列，第一行可以為title行，該方法將輸出每一行每一列
      * @param  string 文件名
      */
     public static function export(Array $data, $file_name = 'file')

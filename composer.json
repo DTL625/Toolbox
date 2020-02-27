@@ -1,22 +1,21 @@
 {
-    "name": "gitlexin/codetool",
+    "name": "DTL625/toolbox",
     "description": "php code tool",
     "type": "library",
     "authors": [
         {
-            "name": "lexin",
-            "email": "772821140@qq.com"
+            "name": "DTL",
+            "email": "watshing625@gmail.com"
         }
     ],
     "license": "MIT",
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.4.0",
-        "phpoffice/phpexcel": "^1.8.1"
+        "php": ">=5.4.0"
     },
     "autoload": {
         "psr-4": { 
-            "Lexin\\": "src/"
+            "DTL\\": "src/"
         },
         "files": [
             "src/functions.php"
