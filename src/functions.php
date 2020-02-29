@@ -5,7 +5,7 @@
 if (!function_exists('pe')) {
     function pe()
     {
-        call_user_func_array('\Lexin\Func\Debug::pe', func_get_args());
+        call_user_func_array('\DTL\FT\Debug::pe', func_get_args());
     }
 }
 
@@ -15,25 +15,25 @@ if (!function_exists('pe')) {
 if (!function_exists('p')) {
     function p()
     {
-        call_user_func_array('\Lexin\Func\Debug::p', func_get_args());
+        call_user_func_array('\DTL\FT\Debug::p', func_get_args());
     }
 }
 
 /**
- * 實時輸出字符串
+ * 實時輸出字串
  */
 if (!function_exists('show_trace_info')) {
     function show_trace_info($msg)
     {
-        call_user_func('\Lexin\Func\Debug::show_trace_info', $msg);
+        call_user_func('\DTL\FT\Debug::show_trace_info', $msg);
     }
 }
 
-if (!function_exists('lx_is')) {
-    function lx_is($value, $rule)
+if (!function_exists('dtl_is')) {
+    function dtl_is($value, $rule)
     {
-        if (is_callable('\Lexin\Func\Validate::is_' . $rule)) {
-            return call_user_func('\Lexin\Func\Validate::is_' . $rule, $value);
+        if (is_callable('\DTL\FT\Validate::is_' . $rule)) {
+            return call_user_func('\DTL\FT\Validate::is_' . $rule, $value);
         } else {
             throw new Exception("{$rule} does not support.");
         }
