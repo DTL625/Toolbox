@@ -74,6 +74,7 @@ class Debug
 
     /**
      * 實時輸出文本內容
+     *
      * @param string $msg
      */
     public static function show_trace_info($msg = '')
@@ -92,12 +93,14 @@ class Debug
 
     /**
      * 將字節大小轉換為可讀性強的帶單位的顯示方式
+     *
      * @param $size
      * @return string
      */
     public static function memory_usage_convert($size)
     {
         $unit = ['b', 'kb', 'mb', 'gb', 'tb', 'pb'];
+
         return @round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . '' . $unit[$i];
     }
 }

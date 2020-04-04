@@ -5,7 +5,8 @@ namespace DTL\FT;
 class Url
 {
     /**
-     * 追加url參數到url中,如果已存在，則覆蓋
+     * 追加url參數到url中,如果已存在，則覆蓋。
+     *
      * @param       $url
      * @param array $appendQueryParams
      * @return string

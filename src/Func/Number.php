@@ -6,6 +6,7 @@ class Number
 {
     /**
      * 保留指定位數小數
+     *
      * @param     $num
      * @param int $size
      * @return float|int
@@ -21,6 +22,7 @@ class Number
 
     /**
      * 過濾字符串內的字符串
+     *
      * @param      $str
      * @param bool $float 是否保留小數
      * @return string

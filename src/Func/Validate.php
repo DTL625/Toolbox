@@ -6,6 +6,7 @@ class Validate
 {
     /**
      * 是否中國手機號
+     *
      * @param $value
      */
     public static function is_mobile($value)
@@ -15,6 +16,7 @@ class Validate
 
     /**
      * 是否日期
+     *
      * @param $value
      * @return bool
      */
@@ -25,6 +27,7 @@ class Validate
 
     /**
      * 是否純字母
+     *
      * @param $value
      * @return bool
      */
@@ -35,6 +38,7 @@ class Validate
 
     /**
      * 是否數字字母
+     *
      * @param $value
      * @return bool
      */
@@ -45,6 +49,7 @@ class Validate
 
     /**
      * 是否純漢字
+     *
      * @param $value
      * @return bool
      */
@@ -55,6 +60,7 @@ class Validate
 
     /**
      * 是否字母漢字
+     *
      * @param $value
      * @return bool
      */
@@ -65,6 +71,7 @@ class Validate
 
     /**
      * 是否數字字母漢字
+     *
      * @param $value
      * @return bool
      */
@@ -74,7 +81,8 @@ class Validate
     }
 
     /**
-     * 是否漢字、字母、數字和下划線_及破折號-
+     * 是否漢字、字母、數字和下滑線_及破折號-
+     *
      * @param $value
      * @return bool
      */
@@ -85,6 +93,7 @@ class Validate
 
     /**
      * 是否郵箱
+     *
      * @param $value
      * @return bool
      */
@@ -95,6 +104,7 @@ class Validate
 
     /**
      * 是否url
+     *
      * @param $value
      * @return bool
      */
@@ -105,6 +115,7 @@ class Validate
 
     /**
      * 是否ip
+     *
      * @param $value
      * @return bool
      */
@@ -114,7 +125,8 @@ class Validate
     }
 
     /**
-     * 使用正則驗證數據
+     * 使用正規表達式驗證數據
+     *
      * @access protected
      * @param mixed $value 字段值
      * @param mixed $rule 驗證規則 正則規則或者預定義正則名
@@ -123,7 +135,7 @@ class Validate
     protected static function regex($value, $rule)
     {
         if (0 !== strpos($rule, '/') && !preg_match('/\/[imsU]{0,4}$/', $rule)) {
-            // 不是正則表達式則兩端補上/
+            // 不是正規表達式則兩端補上/
             $rule = '/^' . $rule . '$/';
         }
         return 1 === preg_match($rule, (string) $value);
@@ -131,6 +143,7 @@ class Validate
 
     /**
      * 使用filter_var方式驗證
+     *
      * @access protected
      * @param mixed $value 字段值
      * @param mixed $rule 驗證規則
