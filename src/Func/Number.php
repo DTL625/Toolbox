@@ -1,6 +1,6 @@
 <?php
 
-namespace DTL\FT;
+namespace DTL\Func;
 
 class Number
 {
