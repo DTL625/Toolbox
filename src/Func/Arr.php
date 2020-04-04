@@ -14,12 +14,8 @@ class Arr
      */
     public static function get($array, $key, $default = null)
     {
-        if (!is_array($array)) {
+        if(!is_array($array) || !$key){
             return $default;
-        }
-
-        if (is_null($key)) {
-            return $array;
         }
 
         if (array_key_exists($key, $array)) {
