@@ -20,7 +20,6 @@ PHP函數工具包
 - key: 指定key  
 - def_val: 默認值  
 
-
      $array = [
         'a' => 1, 
         'b' => 2
