@@ -6,8 +6,8 @@ class Request
 {
     function is_mobile()
     {
-        $mobile            = [];
-        $touchbrowser_list = [
+        $mobile             = [];
+        $touch_browser_list = [
             'iphone',
             'android',
             'phone',
@@ -76,7 +76,7 @@ class Request
             '176x220',
             'windows phone',
         ];
-        $wmlbrowser_list   = [
+        $wml_browser_list   = [
             'cect',
             'compal',
             'ctl',
@@ -119,10 +119,10 @@ class Request
         if (strpos($useragent, $pad_list)) {
             return false;
         }
-        if (($v = strpos($useragent, $touchbrowser_list, true))) {
+        if (($v = strpos($useragent, $touch_browser_list, true))) {
             return '2';
         }
-        if (($v = strpos($useragent, $wmlbrowser_list))) {
+        if (($v = strpos($useragent, $wml_browser_list))) {
             return '3'; //wml版
         }
         $brower = ['mozilla', 'chrome', 'safari', 'opera', 'm3gate', 'winwap', 'openwave', 'myop'];
