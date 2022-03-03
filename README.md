@@ -1,5 +1,4 @@
 # Function Toolbox
----
 ### 介紹:
 PHP函數工具包
 
@@ -12,7 +11,7 @@ PHP函數工具包
 - URL處理
 - 驗證處理
 
-###陣列處理
+### 陣列處理
 
 ---
 `get($array, $key, $def_val)` - 根據指定key獲取陣列內容  

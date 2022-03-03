@@ -5,7 +5,7 @@ namespace DTL\Func;
 class Debug
 {
     /**
-     * 打印傳入的所有參數，並結束程序
+     * 列印傳入的所有參數，並結束程序
      */
     public static function buildStr($value)
     {
@@ -92,7 +92,7 @@ class Debug
     }
 
     /**
-     * 將字節大小轉換為可讀性強的帶單位的顯示方式
+     * 將位元大小轉換為可讀性強的帶單位的顯示方式
      *
      * @param $size
      * @return string
